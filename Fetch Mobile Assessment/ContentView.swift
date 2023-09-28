@@ -7,10 +7,17 @@
 
 import SwiftUI
 
-struct Item: Codable {
+/// A model of an item after JSON data is decoded
+struct Item: Decodable {
     let id: Int
     let listId: Int
     let name: String?
+}
+
+/// Possible errors that may occur from attempting to retrieve item data
+enum RetrieveItemDataError: Error {
+    case invalidURL
+    case invalidData
 }
 
 struct ContentView: View {
@@ -22,7 +29,6 @@ struct ContentView: View {
                 if let itemName = item.name {
                     if !itemName.isEmpty {
                         Text("listId:\(item.listId), id:\(item.id), name:\(itemName)")
-                            .padding(3)
                     }
                 }
             }
@@ -31,8 +37,12 @@ struct ContentView: View {
             do {
                 try await retrieveItems()
                 customSort()
+            } catch RetrieveItemDataError.invalidURL {
+                print("- Invalid URL.")
+            } catch RetrieveItemDataError.invalidData {
+                print("- Unable to decode JSON data.")
             } catch {
-                print("Error!")
+                print("- Unexpected error. Something really went wrong.")
             }
         }
     }
@@ -41,12 +51,18 @@ struct ContentView: View {
     func retrieveItems() async throws {
         let endpoint: String = "https://fetch-hiring.s3.amazonaws.com/hiring.json"
 
-        guard let url = URL(string: endpoint) else { return }
+        guard let url = URL(string: endpoint) else {
+            throw RetrieveItemDataError.invalidURL
+        }
 
         let (data, _) = try await URLSession.shared.data(from: url)
 
-        let decoder = JSONDecoder()
-        items = try decoder.decode([Item].self, from: data)
+        // Parse JSON data into a collection of ``Item``s and assign to `items`
+        do {
+            items = try JSONDecoder().decode([Item].self, from: data)
+        } catch {
+            throw RetrieveItemDataError.invalidData
+        }
     }
 
     /// Sorts by item listId. If listIds are equal, sort by item name
