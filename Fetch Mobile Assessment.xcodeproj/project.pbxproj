@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A58623B22AD3B296002D90A4 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58623B12AD3B296002D90A4 /* Item.swift */; };
+		A58623B62AD3B345002D90A4 /* RetrieveItemDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58623B52AD3B345002D90A4 /* RetrieveItemDataError.swift */; };
 		A5CE2EB52AC5D9D600D3674B /* Fetch_Mobile_AssessmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE2EB42AC5D9D600D3674B /* Fetch_Mobile_AssessmentApp.swift */; };
 		A5CE2EB72AC5D9D600D3674B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE2EB62AC5D9D600D3674B /* ContentView.swift */; };
 		A5CE2EB92AC5D9D800D3674B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5CE2EB82AC5D9D800D3674B /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A58623B12AD3B296002D90A4 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		A58623B52AD3B345002D90A4 /* RetrieveItemDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveItemDataError.swift; sourceTree = "<group>"; };
 		A5CE2EB12AC5D9D600D3674B /* Fetch Mobile Assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fetch Mobile Assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5CE2EB42AC5D9D600D3674B /* Fetch_Mobile_AssessmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch_Mobile_AssessmentApp.swift; sourceTree = "<group>"; };
 		A5CE2EB62AC5D9D600D3674B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 			children = (
 				A5CE2EB42AC5D9D600D3674B /* Fetch_Mobile_AssessmentApp.swift */,
 				A5CE2EB62AC5D9D600D3674B /* ContentView.swift */,
+				A58623B12AD3B296002D90A4 /* Item.swift */,
+				A58623B52AD3B345002D90A4 /* RetrieveItemDataError.swift */,
 				A5CE2EB82AC5D9D800D3674B /* Assets.xcassets */,
 				A5CE2EBA2AC5D9D800D3674B /* Preview Content */,
 			);
@@ -138,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5CE2EB72AC5D9D600D3674B /* ContentView.swift in Sources */,
+				A58623B22AD3B296002D90A4 /* Item.swift in Sources */,
 				A5CE2EB52AC5D9D600D3674B /* Fetch_Mobile_AssessmentApp.swift in Sources */,
+				A58623B62AD3B345002D90A4 /* RetrieveItemDataError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

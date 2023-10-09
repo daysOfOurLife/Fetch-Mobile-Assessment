@@ -7,19 +7,6 @@
 
 import SwiftUI
 
-/// A model of an item after JSON data is decoded
-struct Item: Decodable {
-    let id: Int
-    let listId: Int
-    let name: String?
-}
-
-/// Possible errors that may occur from attempting to retrieve item data
-enum RetrieveItemDataError: Error {
-    case invalidURL
-    case invalidData
-}
-
 struct ContentView: View {
     @State private var items = [Item]()
 
